@@ -4,6 +4,10 @@
 
 # An example controller showing a sample home page
 GET     /                           controllers.HomeController.index
+# Returns the amount of rounding for each transaction in the current accounts of a given user
+GET     /round                      controllers.RoundController.round(email, password)
+# Aggregates rounding over a given period of time as a parameter (start date - end date) of all users
+GET     /rounds                      controllers.RoundController.rounds(since, until)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
